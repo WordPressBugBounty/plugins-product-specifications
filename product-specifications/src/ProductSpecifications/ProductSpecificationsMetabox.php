@@ -91,8 +91,16 @@ final class ProductSpecificationsMetabox implements Metabox
             if (!$attribute instanceof WP_Term) {
                 continue;
             }
+            $type = (string) get_term_meta($attribute->term_id, 'attr_type', \true);
+            if ($type === 'textarea') {
+                $value = $this->preserveNewLines((string) $value);
+            }
             $result[] = ['attr_id' => $attributeId, 'attr_name' => $attribute->name, 'attr_slug' => $attribute->slug, 'attr_desc' => $attribute->description, 'value' => trim((string) $value)];
         }
         return $result;
+    }
+    private function preserveNewLines(string $string): string
+    {
+        return str_replace(['&#10;', '&#xa;', '&#x0a;', '&#013;', '&#xd;', '&#x0d;', "\r\n", "\r"], \PHP_EOL, $string);
     }
 }

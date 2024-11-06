@@ -26,7 +26,7 @@ namespace {
      * @return mixed
     */
     if (!\function_exists('dwspecs_attr_value_by')) {
-        function dwspecs_attr_value_by($post_id = '', $field, $value)
+        function dwspecs_attr_value_by($post_id, $field, $value)
         {
             if (!$post_id) {
                 global $post;
@@ -92,7 +92,8 @@ namespace {
             $result = $table;
             if ($hide_empty) {
                 $result = \array_filter($result, static function ($v) {
-                    return \sizeof($v['attributes']) > 0;
+                    $attributes = $v['attributes'] ?? [];
+                    return \count($attributes) > 0;
                 });
             }
             if ($output === 'serialized') {

@@ -37,7 +37,7 @@ final class ExportDataAjaxHandler
         $results = [];
         $i = 0;
         foreach (dwspecs_get_table_groups() as $table) {
-            $results[$i] = ['table-title' => get_the_title($table['table_id']), 'title-base64' => base64_encode(get_the_title($table['table_id'])), 'table-slug' => get_post_field('post_name', $table['table_id']), 'table-id' => $table['table_id'], 'group-order' => array_map('absint', get_post_meta($table['table_id'], '_groups', \true))];
+            $results[$i] = ['table-title' => get_the_title($table['table_id']), 'title-base64' => base64_encode(get_the_title($table['table_id'])), 'table-slug' => get_post_field('post_name', $table['table_id']), 'table-id' => $table['table_id'], 'group-order' => array_map('absint', (array) get_post_meta($table['table_id'], '_groups', \true))];
             $results[$i]['skleton'] = [];
             foreach ($table['groups'] as $group) {
                 $attributes = [];

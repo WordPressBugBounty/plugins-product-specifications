@@ -44,7 +44,7 @@ declare (strict_types=1);
                         >
                         <span><?php 
             echo \esc_html($term->name);
-            echo \esc_html($slug);
+            echo \esc_html(\urldecode($slug));
             ?></span>
                     </label>
                 </p>

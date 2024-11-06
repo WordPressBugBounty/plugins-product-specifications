@@ -25,6 +25,6 @@ final class Module implements ServiceModule, ExecutableModule
     }
     public function registerAdminMenuPage(ContainerInterface $container): void
     {
-        add_submenu_page('dw-specs', esc_html__('Product specifications settings', 'product-specifications'), esc_html__('Settings', 'product-specifications'), 'edit_pages', 'dw-specs-settings', [$container->get(\Amiut\ProductSpecs\Settings\SettingsPage::class), 'render']);
+        add_submenu_page('dw-specs', __('Product specifications settings', 'product-specifications'), __('Settings', 'product-specifications'), 'manage_options', 'dw-specs-settings', [$container->get(\Amiut\ProductSpecs\Settings\SettingsPage::class), 'render']);
     }
 }

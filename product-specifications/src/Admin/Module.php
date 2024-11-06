@@ -3,10 +3,9 @@
 declare (strict_types=1);
 namespace Amiut\ProductSpecs\Admin;
 
+use Amiut\ProductSpecs\Assets\AssetHelper;
 use ProductSpecifications\Vendor\Inpsyde\Modularity\Module\ModuleClassNameIdTrait;
 use ProductSpecifications\Vendor\Inpsyde\Modularity\Module\ServiceModule;
-use ProductSpecifications\Vendor\Inpsyde\Modularity\Package;
-use ProductSpecifications\Vendor\Inpsyde\Modularity\Properties\PluginProperties;
 use Psr\Container\ContainerInterface;
 use ProductSpecifications\Vendor\Inpsyde\Modularity\Module\ExecutableModule;
 final class Module implements ServiceModule, ExecutableModule
@@ -14,7 +13,7 @@ final class Module implements ServiceModule, ExecutableModule
     use ModuleClassNameIdTrait;
     public function services(): array
     {
-        return [\Amiut\ProductSpecs\Admin\Assets::class => static fn(ContainerInterface $container) => new \Amiut\ProductSpecs\Admin\Assets($container->get(Package::PROPERTIES)), \Amiut\ProductSpecs\Admin\AdminPageTopMenuModifier::class => static fn() => new \Amiut\ProductSpecs\Admin\AdminPageTopMenuModifier()];
+        return [\Amiut\ProductSpecs\Admin\Assets::class => static fn(ContainerInterface $container) => new \Amiut\ProductSpecs\Admin\Assets($container->get(AssetHelper::class)), \Amiut\ProductSpecs\Admin\AdminPageTopMenuModifier::class => static fn() => new \Amiut\ProductSpecs\Admin\AdminPageTopMenuModifier()];
     }
     public function run(ContainerInterface $container): bool
     {
@@ -27,9 +26,10 @@ final class Module implements ServiceModule, ExecutableModule
     }
     private function registerMenuPages(ContainerInterface $container): void
     {
-        add_menu_page(esc_html__('Product specifications table', 'product-specifications'), esc_html__('Specs. tables', 'product-specifications'), 'edit_pages', 'dw-specs', static function () {
+        add_menu_page(esc_html__('Product specifications table', 'product-specifications'), esc_html__('Specs. tables', 'product-specifications'), 'edit_pages', 'dw-specs', static function (): void {
         }, 'dashicons-welcome-view-site', 25);
         // Add tables page
-        add_submenu_page('dw-specs', esc_html__('Add a new table', 'product-specifications'), esc_html__('New table', 'product-specifications'), 'edit_pages', 'dw-specs-new', [__CLASS__, 'addnew_page']);
+        add_submenu_page('dw-specs', esc_html__('Add a new table', 'product-specifications'), esc_html__('New table', 'product-specifications'), 'edit_pages', 'dw-specs-new', static function (): void {
+        });
     }
 }

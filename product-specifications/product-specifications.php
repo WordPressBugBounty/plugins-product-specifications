@@ -4,11 +4,15 @@
  * Plugin Name: Product Specifications for WooCommerce
  * Plugin URI: https://github.com/dornaweb/product-specifications/
  * Description: This plugin adds a product specifications table to your woocommerce products.
- * Version: 0.8.4
+ * Version: 0.8.6
  * Author: Amin Abdolrezapoor
  * Author URI: https://amin.nz
  * License: GPL-2.0+
  * Requires Plugins: woocommerce
+ * Requires PHP: 7.4
+ * Requires at least: 5.9
+ * WC tested up to: 9.3.3
+ * WC requires at least: 8.0.0
  */
 declare (strict_types=1);
 namespace Amiut\ProductSpecs;
@@ -43,7 +47,7 @@ function bootstrap(): void
         setupAutoLoader();
         $plugin = Package::new(PluginProperties::new(__FILE__));
         \Amiut\ProductSpecs\App::instance();
-        $plugin->addModule(new \Amiut\ProductSpecs\Template\Module())->addModule(new \Amiut\ProductSpecs\Repository\Module())->addModule(new \Amiut\ProductSpecs\Content\Module())->addModule(new \Amiut\ProductSpecs\Admin\Module())->addModule(new \Amiut\ProductSpecs\AttributesListUi\Module())->addModule(new \Amiut\ProductSpecs\AttributeGroupsListUi\Module())->addModule(new \Amiut\ProductSpecs\ImportExport\Module())->addModule(new \Amiut\ProductSpecs\Settings\Module())->addModule(new \Amiut\ProductSpecs\Integration\Module())->addModule(new \Amiut\ProductSpecs\Attribute\Module())->addModule(new \Amiut\ProductSpecs\Shortcode\Module())->addModule(new \Amiut\ProductSpecs\Metabox\Module())->addModule(new \Amiut\ProductSpecs\EntityUpdater\Module())->addModule(new \Amiut\ProductSpecs\EntityUpdaterUi\Module())->addModule(new \Amiut\ProductSpecs\ProductSpecifications\Module())->addModule(new \Amiut\ProductSpecs\SpecificationsTable\Module())->boot();
+        $plugin->addModule(new \Amiut\ProductSpecs\Assets\Module())->addModule(new \Amiut\ProductSpecs\Template\Module())->addModule(new \Amiut\ProductSpecs\Repository\Module())->addModule(new \Amiut\ProductSpecs\Content\Module())->addModule(new \Amiut\ProductSpecs\Admin\Module())->addModule(new \Amiut\ProductSpecs\AttributesListUi\Module())->addModule(new \Amiut\ProductSpecs\AttributeGroupsListUi\Module())->addModule(new \Amiut\ProductSpecs\ImportExport\Module())->addModule(new \Amiut\ProductSpecs\Settings\Module())->addModule(new \Amiut\ProductSpecs\Integration\Module())->addModule(new \Amiut\ProductSpecs\Attribute\Module())->addModule(new \Amiut\ProductSpecs\Shortcode\Module())->addModule(new \Amiut\ProductSpecs\Metabox\Module())->addModule(new \Amiut\ProductSpecs\EntityUpdater\Module())->addModule(new \Amiut\ProductSpecs\EntityUpdaterUi\Module())->addModule(new \Amiut\ProductSpecs\ProductSpecifications\Module())->addModule(new \Amiut\ProductSpecs\SpecificationsTable\Module())->boot();
     } catch (Throwable $throwable) {
         handleFailure($throwable);
     }

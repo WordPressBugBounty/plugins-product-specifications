@@ -122,7 +122,7 @@ declare (strict_types=1);
                                 </td>
                                 <td>
                                     <?php 
-            echo \esc_html($group->slug);
+            echo \esc_html(\urldecode($group->slug));
             ?>
                                 </td>
                                 <td>
