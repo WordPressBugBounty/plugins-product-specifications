@@ -46,6 +46,7 @@ return array(
     'Amiut\\ProductSpecs\\ImportExport\\Module' => $baseDir . '/src/ImportExport/Module.php',
     'Amiut\\ProductSpecs\\Integration\\Module' => $baseDir . '/src/Integration/Module.php',
     'Amiut\\ProductSpecs\\Integration\\WooCommerce\\Assets' => $baseDir . '/src/Integration/WooCommerce/Assets.php',
+    'Amiut\\ProductSpecs\\Integration\\WooCommerce\\FeaturesCompatibilityDeclarations' => $baseDir . '/src/Integration/WooCommerce/FeaturesCompatibilityDeclarations.php',
     'Amiut\\ProductSpecs\\Integration\\WooCommerce\\ProductTabs' => $baseDir . '/src/Integration/WooCommerce/ProductTabs.php',
     'Amiut\\ProductSpecs\\Integration\\WooCommerce\\WooCommerceNotInstalledNoticeHandler' => $baseDir . '/src/Integration/WooCommerce/WooCommerceNotInstalledNoticeHandler.php',
     'Amiut\\ProductSpecs\\Metabox\\Metabox' => $baseDir . '/src/Metabox/Metabox.php',

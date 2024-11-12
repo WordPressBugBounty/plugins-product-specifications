@@ -74,6 +74,7 @@ class ComposerStaticInitf19a2aaae1169737e1e96b4c6264d2d1
         'Amiut\\ProductSpecs\\ImportExport\\Module' => __DIR__ . '/../..' . '/src/ImportExport/Module.php',
         'Amiut\\ProductSpecs\\Integration\\Module' => __DIR__ . '/../..' . '/src/Integration/Module.php',
         'Amiut\\ProductSpecs\\Integration\\WooCommerce\\Assets' => __DIR__ . '/../..' . '/src/Integration/WooCommerce/Assets.php',
+        'Amiut\\ProductSpecs\\Integration\\WooCommerce\\FeaturesCompatibilityDeclarations' => __DIR__ . '/../..' . '/src/Integration/WooCommerce/FeaturesCompatibilityDeclarations.php',
         'Amiut\\ProductSpecs\\Integration\\WooCommerce\\ProductTabs' => __DIR__ . '/../..' . '/src/Integration/WooCommerce/ProductTabs.php',
         'Amiut\\ProductSpecs\\Integration\\WooCommerce\\WooCommerceNotInstalledNoticeHandler' => __DIR__ . '/../..' . '/src/Integration/WooCommerce/WooCommerceNotInstalledNoticeHandler.php',
         'Amiut\\ProductSpecs\\Metabox\\Metabox' => __DIR__ . '/../..' . '/src/Metabox/Metabox.php',
