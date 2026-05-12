@@ -115,7 +115,7 @@ class PluginProperties extends BaseProperties
     public function requiresPlugins(): array
     {
         $value = $this->get(self::PROP_REQUIRES_PLUGINS);
-        return ($value && is_string($value)) ? explode(',', $value) : [];
+        return $value && is_string($value) ? explode(',', $value) : [];
     }
     /**
      * @return bool

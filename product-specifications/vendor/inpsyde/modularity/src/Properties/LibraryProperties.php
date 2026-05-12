@@ -101,10 +101,10 @@ class LibraryProperties extends BaseProperties
      */
     private static function extractPhpVersion(array $composerData, string $key = 'require'): ?string
     {
-        $nextKey = ($key === 'require') ? 'require-dev' : null;
+        $nextKey = $key === 'require' ? 'require-dev' : null;
         $base = (array) ($composerData[$key] ?? []);
         $requirement = $base['php'] ?? null;
-        $version = ($requirement && is_string($requirement)) ? trim($requirement) : null;
+        $version = $requirement && is_string($requirement) ? trim($requirement) : null;
         if (!$version) {
             return $nextKey ? static::extractPhpVersion($composerData, $nextKey) : null;
         }

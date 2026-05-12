@@ -7,27 +7,27 @@ namespace Composer\Autoload;
 class ComposerStaticInitf19a2aaae1169737e1e96b4c6264d2d1
 {
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'P' =>
         array (
             'Psr\\Container\\' => 14,
             'ProductSpecifications\\Vendor\\Inpsyde\\Modularity\\' => 48,
         ),
-        'A' => 
+        'A' =>
         array (
             'Amiut\\ProductSpecs\\' => 19,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Psr\\Container\\' => 
+        'Psr\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'ProductSpecifications\\Vendor\\Inpsyde\\Modularity\\' => 
+        'ProductSpecifications\\Vendor\\Inpsyde\\Modularity\\' =>
         array (
             0 => __DIR__ . '/..' . '/inpsyde/modularity/src',
         ),
-        'Amiut\\ProductSpecs\\' => 
+        'Amiut\\ProductSpecs\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

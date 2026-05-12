@@ -49,7 +49,7 @@ class AttributesRepository
             if (is_int($position1) && is_int($position2)) {
                 return $position1 <=> $position2;
             }
-            return ($position1 === \false) ? 1 : -1;
+            return $position1 === \false ? 1 : -1;
         });
         return $terms;
     }

@@ -136,9 +136,9 @@ final class AttributeController
         $group = (string) filter_input(\INPUT_POST, 'attr_group', \FILTER_SANITIZE_SPECIAL_CHARS);
         $type = (string) filter_input(\INPUT_POST, 'attr_type', \FILTER_SANITIZE_SPECIAL_CHARS);
         $values = (string) filter_input(\INPUT_POST, 'attr_values', \FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $values = (!empty($values)) ? explode(\PHP_EOL, $values) : [];
+        $values = !empty($values) ? explode(\PHP_EOL, $values) : [];
         $default = $this->defaultValue($type);
-        $id = ((int) filter_input(\INPUT_POST, 'group_id', \FILTER_SANITIZE_NUMBER_INT)) ?: 0;
+        $id = (int) filter_input(\INPUT_POST, 'group_id', \FILTER_SANITIZE_NUMBER_INT) ?: 0;
         return ['name' => $name, 'slug' => $slug, 'description' => $description, 'group' => $group, 'type' => $type, 'values' => $values, 'default' => $default, 'id' => $id];
     }
     /**

@@ -381,15 +381,15 @@ class Package
         $addCallback = null;
         switch ($status) {
             case self::MODULE_REGISTERED:
-                $services = ($module instanceof ServiceModule) ? $module->services() : null;
+                $services = $module instanceof ServiceModule ? $module->services() : null;
                 $addCallback = [$this->containerConfigurator, 'addService'];
                 break;
             case self::MODULE_REGISTERED_FACTORIES:
-                $services = ($module instanceof FactoryModule) ? $module->factories() : null;
+                $services = $module instanceof FactoryModule ? $module->factories() : null;
                 $addCallback = [$this->containerConfigurator, 'addFactory'];
                 break;
             case self::MODULE_EXTENDED:
-                $services = ($module instanceof ExtendingModule) ? $module->extensions() : null;
+                $services = $module instanceof ExtendingModule ? $module->extensions() : null;
                 $addCallback = [$this->containerConfigurator, 'addExtension'];
                 break;
         }

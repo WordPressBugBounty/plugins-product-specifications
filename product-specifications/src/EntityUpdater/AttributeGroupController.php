@@ -73,7 +73,7 @@ final class AttributeGroupController
         $name = (string) filter_input(\INPUT_POST, 'group_name', \FILTER_SANITIZE_SPECIAL_CHARS);
         $slug = (string) filter_input(\INPUT_POST, 'group_slug', \FILTER_SANITIZE_SPECIAL_CHARS);
         $description = (string) filter_input(\INPUT_POST, 'group_desc', \FILTER_SANITIZE_SPECIAL_CHARS);
-        $id = ((int) filter_input(\INPUT_POST, 'group_id', \FILTER_SANITIZE_NUMBER_INT)) ?: 0;
+        $id = (int) filter_input(\INPUT_POST, 'group_id', \FILTER_SANITIZE_NUMBER_INT) ?: 0;
         return ['name' => $name, 'slug' => $slug, 'description' => $description, 'id' => $id];
     }
     private function sanitizeAction(string $action): string

@@ -136,7 +136,7 @@ class BaseProperties implements Properties
     public function requiresWp(): ?string
     {
         $value = $this->get(self::PROP_REQUIRES_WP);
-        return ($value && is_string($value)) ? $value : null;
+        return $value && is_string($value) ? $value : null;
     }
     /**
      * @return string|null
@@ -144,7 +144,7 @@ class BaseProperties implements Properties
     public function requiresPhp(): ?string
     {
         $value = $this->get(self::PROP_REQUIRES_PHP);
-        return ($value && is_string($value)) ? $value : null;
+        return $value && is_string($value) ? $value : null;
     }
     /**
      * @return array

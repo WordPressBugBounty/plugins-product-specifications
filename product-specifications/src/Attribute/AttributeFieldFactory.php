@@ -10,7 +10,7 @@ final class AttributeFieldFactory
     {
         $type = (string) get_term_meta($term->term_id, 'attr_type', \true);
         $default = get_term_meta($term->term_id, 'attr_default', \true);
-        $value = (!is_null($contextPostId)) ? ((array) dwspecs_attr_value_by($contextPostId, 'id', $term->term_id))['value'] ?? null : null;
+        $value = !is_null($contextPostId) ? ((array) dwspecs_attr_value_by($contextPostId, 'id', $term->term_id))['value'] ?? null : null;
         switch ($type) {
             case 'text':
                 return new \Amiut\ProductSpecs\Attribute\AttributeFieldText($term->name, $term->slug, $term->term_id, (string) $default, $term->description, $value);

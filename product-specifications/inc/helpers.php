@@ -119,7 +119,7 @@ namespace {
                 $tables = new \WP_Query(['post_type' => 'specs-table', 'showposts' => -1]);
                 $tbl_array = $tables->get_posts();
                 foreach ($tbl_array as $table) {
-                    $groups = (\get_post_meta($table->ID, '_groups', \true) === '') ? [] : \get_post_meta($table->ID, '_groups', \true);
+                    $groups = \get_post_meta($table->ID, '_groups', \true) === '' ? [] : \get_post_meta($table->ID, '_groups', \true);
                     $groups_array = [];
                     foreach ($groups as $group) {
                         $group = \get_term_by('id', $group, 'spec-group');
@@ -128,7 +128,7 @@ namespace {
                     $output[] = ['table_id' => $table->ID, 'groups' => $groups_array];
                 }
             } elseif (\absint($table_id) !== 0) {
-                $groups = (\get_post_meta($table_id, '_groups', \true) === '') ? [] : \get_post_meta($table_id, '_groups', \true);
+                $groups = \get_post_meta($table_id, '_groups', \true) === '' ? [] : \get_post_meta($table_id, '_groups', \true);
                 $groups_array = [];
                 foreach ($groups as $group) {
                     $group = \get_term_by('id', $group, 'spec-group');

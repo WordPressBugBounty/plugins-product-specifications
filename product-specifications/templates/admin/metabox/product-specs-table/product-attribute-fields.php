@@ -19,7 +19,7 @@ declare (strict_types=1);
         ?>
         <li
             class="tab <?php 
-        echo ($index === 0) ? 'active' : '';
+        echo $index === 0 ? 'active' : '';
         ?>"
             data-target="#dwps_attrs_<?php 
         echo \esc_attr((string) $group->id());
