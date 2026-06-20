@@ -214,7 +214,11 @@ declare (strict_types=1);
 <script id="dwps_delete_template" type="x-tmpl-mustache" data-templateType="JSON">
     {
         "data" : {
-            "type" : "group"
+            "type" : "group",
+            "nonceField" : "dwps_modify_groups_nonce",
+            "nonce" : "<?php 
+    echo \esc_attr(\wp_create_nonce('dwps_modify_groups'));
+    ?>"
         },
         "modal" : {
             "title" : "<?php 
